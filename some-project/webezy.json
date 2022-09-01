@@ -1,0 +1,155 @@
+{
+    "domain": "domain",
+    "package_version": "v1",
+    "project": {
+        "uri": "/Users/amitshmulevitch/webezy/some-project",
+        "name": "some-project",
+        "packageName": "someproject",
+        "version": "0.0.1",
+        "type": "projects",
+        "kind": "Webezy.project/tier1",
+        "serverLanguage": "python"
+    },
+    "services": {
+        "SampleService": {
+            "uri": "/Users/amitshmulevitch/webezy/some-project/protos/SampleService.proto",
+            "name": "SampleService",
+            "fullName": "domain.SampleService.v1",
+            "methods": [
+                {
+                    "name": "SampleRPC",
+                    "fullName": "domain.SampleService.v1.SampleRPC",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    }
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/some-project/methods/domain.SampleService.v1.GetSample",
+                    "name": "GetSample",
+                    "fullName": "domain.SampleService.v1.GetSample",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "clientStreaming": false,
+                    "serverStreaming": false
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/some-project/methods/domain.SampleService.v1.GetOtherSample",
+                    "name": "GetOtherSample",
+                    "fullName": "domain.SampleService.v1.GetOtherSample",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/some-project/messages/domain.samplePkg.v1.OtherMsg",
+                        "name": "OtherMsg",
+                        "fullName": "domain.samplePkg.v1.OtherMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "clientStreaming": false,
+                    "serverStreaming": false
+                }
+            ],
+            "clientImpl": "python",
+            "serverImpl": "python",
+            "version": "0.0.1",
+            "dependencies": [
+                "domain.samplePkg.v1"
+            ]
+        }
+    },
+    "packages": {
+        "protos/v1/samplePkg.proto": {
+            "uri": "/Users/amitshmulevitch/webezy/some-project/packages/domain.samplePkg.v1",
+            "name": "samplePkg",
+            "package": "domain.samplePkg.v1",
+            "messages": [
+                {
+                    "name": "SampleMsg",
+                    "fullName": "domain.samplePkg.v1.SampleMsg",
+                    "fields": [
+                        {
+                            "name": "SampleString",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleBool",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_BOOL",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleInt",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_INT32",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/some-project/messages/domain.samplePkg.v1.OtherMsg",
+                    "name": "OtherMsg",
+                    "fullName": "domain.samplePkg.v1.OtherMsg",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/some-project/fields/domain.samplePkg.v1.OtherMsg.Str_Field",
+                            "name": "Str_Field",
+                            "fullName": "domain.samplePkg.v1.OtherMsg.Str_Field",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                }
+            ],
+            "version": "0.0.1",
+            "dependencies": [],
+            "enums": []
+        }
+    }
+}

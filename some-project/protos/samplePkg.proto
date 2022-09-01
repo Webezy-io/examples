@@ -1,0 +1,22 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+package domain.samplePkg.v1;
+
+
+
+
+
+// [webezy] - Messages descriptions for 'domain.samplePkg.v1'
+
+// [webezy] - 'domain.samplePkg.v1.SampleMsg' 
+message SampleMsg {
+	string SampleString = 1;
+	bool SampleBool = 2;
+	int32 SampleInt = 3;
+}
+
+// [webezy] - 'domain.samplePkg.v1.OtherMsg' 
+message OtherMsg {
+	string Str_Field = 1;
+}
