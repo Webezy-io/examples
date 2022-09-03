@@ -12,8 +12,6 @@ service SampleService {
 	// [webezy] - SampleRPC
 	rpc SampleRPC(domain.samplePkg.v1.SampleMsg) returns (domain.samplePkg.v1.SampleMsg);
 	// [webezy] - GetSample
-	rpc GetSample(domain.samplePkg.v1.SampleMsg) returns (domain.samplePkg.v1.SampleMsg);
-	// [webezy] - GetOtherSample
-	rpc GetOtherSample(domain.samplePkg.v1.SampleMsg) returns (domain.samplePkg.v1.OtherMsg);
+	rpc GetSample(domain.samplePkg.v1.SampleMsg) returns (domain.samplePkg.v1.OtherMsg);
 }
 

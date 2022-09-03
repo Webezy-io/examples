@@ -29,17 +29,21 @@ for SERVICE in "${services[@]}"; do
     cd ..
     # mkdir -p $DESTDIR
     echo "[webezy-script] ---> compiling dir "$SERVICE
+    echo "[webezy-script] ---> generating models for Python"
     python3 -m grpc_tools.protoc         --proto_path=$SERVICE/         --python_out=$DESTDIR         --grpc_python_out=$DESTDIR         $SERVICE/*.proto
 done
 statuscode=$?
 echo "[webezy-script] ---> Exit code for protoc -> "$statuscode
 cd $DESTDIR
 for FILE in *; do
-    filename=$FILE
-    search="import"
-    replace="from . import"
-    sed -i'.bak' -e "4,20s/^$search/$replace/gi" $filename
-    rm -f *.bak
+    if [[ $FILE == *".py"* ]]
+    then
+        filename=$FILE
+        search="import"
+        replace="from . import"
+        sed -i'.bak' -e "4,20s/^$search/$replace/gi" $filename
+        rm -f *.bak
+    fi
 done
 CURRENT_DIR=pwd
 if [[ $CURRENT_DIR == *"v1"* ]]
@@ -60,3 +64,5 @@ for FILE in *; do
     rm -f *.bak
 done
 cd ..
+mkdir ./clients/python/generated
+cp -R ./services/generated/*.py ./clients/python/generated

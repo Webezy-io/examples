@@ -1,4 +1,4 @@
-# someproject
+# projectpy
 
 This project has been generated thanks to ```Webezy.io``` CLI.
 For start using it please run 

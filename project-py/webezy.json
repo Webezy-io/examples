@@ -1,18 +1,26 @@
 {
     "domain": "domain",
-    "package_version": "v1",
     "project": {
-        "uri": "/Users/amitshmulevitch/webezy/some-project",
-        "name": "some-project",
-        "packageName": "someproject",
+        "uri": "/Users/amitshmulevitch/webezy/samples/project-py",
+        "name": "project-py",
+        "packageName": "projectpy",
         "version": "0.0.1",
         "type": "projects",
         "kind": "Webezy.project/tier1",
-        "serverLanguage": "python"
+        "serverLanguage": "python",
+        "server": {
+            "language": "PYTHON"
+        },
+        "clients": [
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-py/clients/python",
+                "language": "PYTHON"
+            }
+        ]
     },
     "services": {
         "SampleService": {
-            "uri": "/Users/amitshmulevitch/webezy/some-project/protos/SampleService.proto",
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-py/protos/SampleService.proto",
             "name": "SampleService",
             "fullName": "domain.SampleService.v1",
             "methods": [
@@ -35,7 +43,7 @@
                     }
                 },
                 {
-                    "uri": "/Users/amitshmulevitch/webezy/some-project/methods/domain.SampleService.v1.GetSample",
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-py/methods/domain.SampleService.v1.GetSample",
                     "name": "GetSample",
                     "fullName": "domain.SampleService.v1.GetSample",
                     "type": "descriptors",
@@ -47,28 +55,7 @@
                         "kind": "Webezy.descriptor/message"
                     },
                     "outputType": {
-                        "name": "SampleMsg",
-                        "fullName": "domain.samplePkg.v1.SampleMsg",
-                        "type": "descriptors",
-                        "kind": "Webezy.descriptor/message"
-                    },
-                    "clientStreaming": false,
-                    "serverStreaming": false
-                },
-                {
-                    "uri": "/Users/amitshmulevitch/webezy/some-project/methods/domain.SampleService.v1.GetOtherSample",
-                    "name": "GetOtherSample",
-                    "fullName": "domain.SampleService.v1.GetOtherSample",
-                    "type": "descriptors",
-                    "kind": "Webezy.descriptor/method",
-                    "inputType": {
-                        "name": "SampleMsg",
-                        "fullName": "domain.samplePkg.v1.SampleMsg",
-                        "type": "descriptors",
-                        "kind": "Webezy.descriptor/message"
-                    },
-                    "outputType": {
-                        "uri": "/Users/amitshmulevitch/webezy/some-project/messages/domain.samplePkg.v1.OtherMsg",
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-py/messages/domain.samplePkg.v1.OtherMsg",
                         "name": "OtherMsg",
                         "fullName": "domain.samplePkg.v1.OtherMsg",
                         "type": "descriptors",
@@ -88,7 +75,7 @@
     },
     "packages": {
         "protos/v1/samplePkg.proto": {
-            "uri": "/Users/amitshmulevitch/webezy/some-project/packages/domain.samplePkg.v1",
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-py/packages/domain.samplePkg.v1",
             "name": "samplePkg",
             "package": "domain.samplePkg.v1",
             "messages": [
@@ -128,12 +115,12 @@
                     "kind": "Webezy.descriptor/message"
                 },
                 {
-                    "uri": "/Users/amitshmulevitch/webezy/some-project/messages/domain.samplePkg.v1.OtherMsg",
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-py/messages/domain.samplePkg.v1.OtherMsg",
                     "name": "OtherMsg",
                     "fullName": "domain.samplePkg.v1.OtherMsg",
                     "fields": [
                         {
-                            "uri": "/Users/amitshmulevitch/webezy/some-project/fields/domain.samplePkg.v1.OtherMsg.Str_Field",
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-py/fields/domain.samplePkg.v1.OtherMsg.Str_Field",
                             "name": "Str_Field",
                             "fullName": "domain.samplePkg.v1.OtherMsg.Str_Field",
                             "index": 1,
