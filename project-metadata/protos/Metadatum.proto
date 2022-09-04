@@ -1,0 +1,15 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+import "protos/metadata.proto";
+
+
+
+
+
+// [webezy] - Service description None
+service Metadatum {
+	// [webezy] - TestUnary IN:domain.metadata.v1.TestMetadata | OUT:domain.metadata.v1.TestMetadata
+	rpc TestUnary(domain.metadata.v1.TestMetadata) returns (domain.metadata.v1.TestMetadata);
+}
+

@@ -1,0 +1,94 @@
+{
+    "domain": "domain",
+    "project": {
+        "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata",
+        "name": "project-metadata",
+        "packageName": "projectmetadata",
+        "version": "0.0.1",
+        "type": "projects",
+        "kind": "Webezy.project/tier1",
+        "serverLanguage": "python",
+        "server": {
+            "language": "PYTHON"
+        },
+        "clients": [
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-metadata/clients/python",
+                "language": "PYTHON"
+            },
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-metadata/clients/typescript",
+                "language": "TYPESCRIPT"
+            }
+        ]
+    },
+    "services": {
+        "Metadatum": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/protos/Metadatum.proto",
+            "name": "Metadatum",
+            "fullName": "domain.Metadatum.v1",
+            "clientImpl": "python",
+            "serverImpl": "python",
+            "version": "0.0.1",
+            "methods": [
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/methods/domain.Metadatum.v1.TestUnary",
+                    "name": "TestUnary",
+                    "fullName": "domain.Metadatum.v1.TestUnary",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/messages/domain.metadata.v1.TestMetadata",
+                        "name": "TestMetadata",
+                        "fullName": "domain.metadata.v1.TestMetadata",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/messages/domain.metadata.v1.TestMetadata",
+                        "name": "TestMetadata",
+                        "fullName": "domain.metadata.v1.TestMetadata",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "clientStreaming": false,
+                    "serverStreaming": false
+                }
+            ],
+            "dependencies": [
+                "domain.metadata.v1"
+            ]
+        }
+    },
+    "packages": {
+        "protos/v1/metadata.proto": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/packages/domain.metadata.v1",
+            "name": "metadata",
+            "package": "domain.metadata.v1",
+            "version": "0.0.1",
+            "messages": [
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/messages/domain.metadata.v1.TestMetadata",
+                    "name": "TestMetadata",
+                    "fullName": "domain.metadata.v1.TestMetadata",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-metadata/fields/domain.metadata.v1.TestMetadata.SimpleField",
+                            "name": "SimpleField",
+                            "fullName": "domain.metadata.v1.TestMetadata.SimpleField",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                }
+            ],
+            "dependencies": [],
+            "enums": []
+        }
+    }
+}

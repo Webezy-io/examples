@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {},
+        "target": "ES2019",
+        "outDir": "clients/typescript",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "incremental": true,
+        "declaration": true,
+        "newLine": "lf",
+        "strict": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "typings/global.d.ts",
+        "services/**/*",
+        "clients/typescript/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "services/generated"
+    ],
+    "references": [
+        {
+            "path": "services/generated"
+        }
+    ]
+}
