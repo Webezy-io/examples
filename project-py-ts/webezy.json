@@ -1,0 +1,146 @@
+{
+    "domain": "domain",
+    "project": {
+        "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts",
+        "name": "project-py-ts",
+        "packageName": "projectpyts",
+        "version": "0.0.1",
+        "type": "projects",
+        "kind": "Webezy.project/tier1",
+        "serverLanguage": "python",
+        "server": {
+            "language": "PYTHON"
+        },
+        "clients": [
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-py-ts/clients/python",
+                "language": "PYTHON"
+            },
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-py-ts/clients/typescript",
+                "language": "TYPESCRIPT"
+            }
+        ]
+    },
+    "services": {
+        "SampleService": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts/protos/SampleService.proto",
+            "name": "SampleService",
+            "fullName": "domain.SampleService.v1",
+            "methods": [
+                {
+                    "name": "SampleRPC",
+                    "fullName": "domain.SampleService.v1.SampleRPC",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    }
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts/methods/domain.SampleService.v1.GetSample",
+                    "name": "GetSample",
+                    "fullName": "domain.SampleService.v1.GetSample",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts/messages/domain.samplePkg.v1.OtherMsg",
+                        "name": "OtherMsg",
+                        "fullName": "domain.samplePkg.v1.OtherMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "clientStreaming": false,
+                    "serverStreaming": false
+                }
+            ],
+            "clientImpl": "python",
+            "serverImpl": "python",
+            "version": "0.0.2",
+            "dependencies": [
+                "domain.samplePkg.v1"
+            ]
+        }
+    },
+    "packages": {
+        "protos/v1/samplePkg.proto": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts/packages/domain.samplePkg.v1",
+            "name": "samplePkg",
+            "package": "domain.samplePkg.v1",
+            "messages": [
+                {
+                    "name": "SampleMsg",
+                    "fullName": "domain.samplePkg.v1.SampleMsg",
+                    "fields": [
+                        {
+                            "name": "SampleString",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleBool",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_BOOL",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleInt",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_INT32",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts/messages/domain.samplePkg.v1.OtherMsg",
+                    "name": "OtherMsg",
+                    "fullName": "domain.samplePkg.v1.OtherMsg",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-py-ts/fields/domain.samplePkg.v1.OtherMsg.Str_Field",
+                            "name": "Str_Field",
+                            "fullName": "domain.samplePkg.v1.OtherMsg.Str_Field",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                }
+            ],
+            "version": "0.0.1",
+            "dependencies": [],
+            "enums": []
+        }
+    }
+}

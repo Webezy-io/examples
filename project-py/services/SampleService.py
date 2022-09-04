@@ -33,3 +33,4 @@ class SampleService(SampleService_service.SampleServiceServicer):
 		print("[GetSample] Request recieved from client -> {0}".format(SampleMsg.SampleString))
 		response = SampleService_messages.samplePkg__pb2.OtherMsg(Str_Field='Some message from server')
 		return response
+
