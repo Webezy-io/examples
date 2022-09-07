@@ -1,0 +1,15 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+import "Health.proto";
+
+
+
+
+
+// [webezy] - Service description None
+service HealthCheck {
+	// [webezy] - Check IN:webezy.Health.v1.HealthCheckRequest | OUT:webezy.Health.v1.HealthCheckResponse
+	rpc Check(webezy.Health.v1.HealthCheckRequest) returns (webezy.Health.v1.HealthCheckResponse);
+}
+

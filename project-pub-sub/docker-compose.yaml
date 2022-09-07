@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+
+  pubsub-app:
+    container_name: pubsub-app
+    build: .
+
+  pubsub-web:
+    container_name: pubsub-web
+    image: envoyproxy/envoy-alpine:v1.21-latest
+    volumes:
+      - ./envoy/envoy.yaml:/etc/envoy/envoy.yaml
+    command: /usr/local/bin/envoy -c /etc/envoy/envoy.yaml --service-cluster webezy_service --service-node webezy_service
+    ports:
+      - "9000:9000"
+      - "3000:3000"
+
+
+  pubsub-monitor:
+    image: grafana/grafana:7.0.0
+    container_name: pubsub-monitor
+    restart: unless-stopped
+    environment:
+      - GF_DEFAULT_APP_MODE=development
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    volumes:
+      - ./grafana:/var/lib/grafana/plugins

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "pubsub-plugin",
+  "id": "webezy",
+  "metrics": true,
+  "info": {
+    "description": "Webezy sample plugin to project-pub-sub, More info on https://www.webezy.io",
+    "author": {
+      "name": "Amit Shmulevitch",
+      "url": "https://www.webezy.io"
+    },
+    "keywords": [
+      "gRPC",
+      "Webezy",
+      "Stream"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/grafana-starter-datasource"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/grafana-starter-datasource/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "streaming": true,
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  }
+}

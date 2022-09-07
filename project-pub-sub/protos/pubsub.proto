@@ -1,0 +1,39 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+package domain.pubsub.v1;
+
+
+
+
+
+// [webezy] - Messages descriptions for 'domain.pubsub.v1'
+
+// [webezy] - 'domain.pubsub.v1.PublishRequest' 
+message PublishRequest {
+	string Topic = 1;
+}
+
+// [webezy] - 'domain.pubsub.v1.Event' 
+message Event {
+	string Topic = 1;
+	google.protobuf.Timestamp Time = 2;
+	google.protobuf.Struct Data = 3;
+}
+
+// [webezy] - 'domain.pubsub.v1.PublishResponse' 
+message PublishResponse {
+	string Status = 1;
+}
+
+// [webezy] - 'domain.pubsub.v1.SubscribeResponse' 
+message SubscribeResponse {
+	Event Event = 1;
+}
+
+// [webezy] - 'domain.pubsub.v1.SubscribeRequest' 
+message SubscribeRequest {
+	string Topic = 1;
+}

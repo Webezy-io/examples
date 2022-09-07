@@ -1,0 +1,27 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+package webezy.Health.v1;
+
+
+
+
+
+// [webezy] - Messages descriptions for 'webezy.Health.v1'
+
+// [webezy] - 'webezy.Health.v1.HealthCheckRequest' 
+message HealthCheckRequest {
+	string service = 1;
+}
+
+// [webezy] - 'webezy.Health.v1.HealthCheckResponse' 
+message HealthCheckResponse {
+	ServingStatus status = 1;
+}
+// [webezy] - Enums descriptions 
+enum ServingStatus {
+	UNKNOWN = 0;
+	SERVING = 1;
+	NOT_SERVING = 2;
+	NOT_FOUND = 3;
+}

@@ -3,7 +3,6 @@ import asyncio
 import logging
 
 import grpc
-from .generated import Metadatum_pb2,Metadatum_pb2_grpc
 from generated import Metadatum_pb2,Metadatum_pb2_grpc
 
 import argparse
@@ -32,6 +31,7 @@ if __name__ == "__main__":
                         help="the server host")
 	args = parser.parse_args()
 	client = projectmetadata(args.host)
+	
 
 	# TODO insert your client code here and use the "stubs"...
 

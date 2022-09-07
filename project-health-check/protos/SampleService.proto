@@ -1,0 +1,15 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+import "protos/samplePkg.proto";
+
+
+
+
+
+// [webezy] - Service description None
+service SampleService {
+	// [webezy] - SampleRPC IN:domain.samplePkg.v1.SampleMsg | OUT:domain.samplePkg.v1.SampleMsg
+	rpc SampleRPC(domain.samplePkg.v1.SampleMsg) returns (domain.samplePkg.v1.SampleMsg);
+}
+

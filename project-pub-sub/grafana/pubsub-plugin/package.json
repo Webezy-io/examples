@@ -1,0 +1,30 @@
+{
+  "name": "webezy-pubsub-plugin",
+  "version": "1.0.0",
+  "description": "Webezy sample plugin to project-pub-sub, More info on https://www.webezy.io",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "sign": "grafana-toolkit plugin:sign",
+    "start": "yarn watch"
+  },
+  "author": "Amit Shmulevitch",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@grafana/data": "latest",
+    "@grafana/toolkit": "latest",
+    "@grafana/ui": "latest",
+    "@testing-library/jest-dom": "5.4.0",
+    "@testing-library/react": "^10.0.2",
+    "@types/lodash": "latest"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.21.0",
+    "grpc-web": "^1.3.1"
+  }
+}

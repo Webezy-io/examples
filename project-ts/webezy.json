@@ -1,0 +1,171 @@
+{
+    "domain": "domain",
+    "project": {
+        "uri": "/Users/amitshmulevitch/webezy/samples/project-ts",
+        "name": "project-ts",
+        "packageName": "projectts",
+        "version": "0.0.1",
+        "type": "projects",
+        "kind": "Webezy.project/tier1",
+        "serverLanguage": "typescript",
+        "server": {
+            "language": "TYPESCRIPT"
+        },
+        "clients": [
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-ts/clients/typescript",
+                "language": "TYPESCRIPT"
+            }
+        ]
+    },
+    "services": {
+        "SampleService": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/protos/SampleService.proto",
+            "name": "SampleService",
+            "fullName": "domain.SampleService.v1",
+            "methods": [
+                {
+                    "name": "SampleRPC",
+                    "fullName": "domain.SampleService.v1.SampleRPC",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    }
+                }
+            ],
+            "clientImpl": "python",
+            "serverImpl": "python",
+            "version": "0.0.1",
+            "dependencies": [
+                "domain.samplePkg.v1"
+            ]
+        }
+    },
+    "packages": {
+        "protos/v1/samplePkg.proto": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/packages/domain.samplePkg.v1",
+            "name": "samplePkg",
+            "package": "domain.samplePkg.v1",
+            "messages": [
+                {
+                    "name": "SampleMsg",
+                    "fullName": "domain.samplePkg.v1.SampleMsg",
+                    "fields": [
+                        {
+                            "name": "SampleString",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleBool",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_BOOL",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleInt",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_INT32",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/messages/domain.samplePkg.v1.TestEnum",
+                    "name": "TestEnum",
+                    "fullName": "domain.samplePkg.v1.TestEnum",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/fields/domain.samplePkg.v1.TestEnum.Status",
+                            "name": "Status",
+                            "fullName": "domain.samplePkg.v1.TestEnum.Status",
+                            "index": 1,
+                            "fieldType": "TYPE_ENUM",
+                            "label": "LABEL_OPTIONAL",
+                            "enumType": {
+                                "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/enums/domain.samplePkg.v1.ServingStatus",
+                                "name": "ServingStatus",
+                                "fullName": "domain.samplePkg.v1.ServingStatus",
+                                "values": [
+                                    {
+                                        "name": "UNKNOWN_SERVINGSTATUS"
+                                    },
+                                    {
+                                        "name": "NOT_FOUND",
+                                        "number": 1,
+                                        "index": 1
+                                    },
+                                    {
+                                        "name": "SERVING",
+                                        "number": 2,
+                                        "index": 2
+                                    },
+                                    {
+                                        "name": "NOT_SERVING",
+                                        "number": 3,
+                                        "index": 3
+                                    }
+                                ]
+                            },
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                }
+            ],
+            "version": "0.0.1",
+            "dependencies": [],
+            "enums": [
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/enums/domain.samplePkg.v1.ServingStatus",
+                    "name": "ServingStatus",
+                    "fullName": "domain.samplePkg.v1.ServingStatus",
+                    "values": [
+                        {
+                            "name": "UNKNOWN_SERVINGSTATUS"
+                        },
+                        {
+                            "name": "NOT_FOUND",
+                            "number": 1,
+                            "index": 1
+                        },
+                        {
+                            "name": "SERVING",
+                            "number": 2,
+                            "index": 2
+                        },
+                        {
+                            "name": "NOT_SERVING",
+                            "number": 3,
+                            "index": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

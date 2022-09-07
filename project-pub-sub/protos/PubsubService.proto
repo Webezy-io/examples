@@ -1,0 +1,17 @@
+syntax = "proto3";
+// Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
+
+import "pubsub.proto";
+
+
+
+
+
+// [webezy] - Service description None
+service PubsubService {
+	// [webezy] - Publish IN:domain.pubsub.v1.PublishRequest | OUT:domain.pubsub.v1.PublishResponse
+	rpc Publish(domain.pubsub.v1.PublishRequest) returns (domain.pubsub.v1.PublishResponse);
+	// [webezy] - Subscribe IN:domain.pubsub.v1.SubscribeRequest | OUT:stream domain.pubsub.v1.SubscribeResponse
+	rpc Subscribe(domain.pubsub.v1.SubscribeRequest) returns (stream domain.pubsub.v1.SubscribeResponse);
+}
+

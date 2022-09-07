@@ -1,0 +1,233 @@
+{
+    "domain": "domain",
+    "project": {
+        "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check",
+        "name": "project-health-check",
+        "packageName": "projecthealthcheck",
+        "version": "0.0.1",
+        "type": "projects",
+        "kind": "Webezy.project/tier1",
+        "serverLanguage": "typescript",
+        "server": {
+            "language": "TYPESCRIPT"
+        },
+        "clients": [
+            {
+                "outDir": "/Users/amitshmulevitch/webezy/samples/project-health-check/clients/typescript",
+                "language": "TYPESCRIPT"
+            }
+        ]
+    },
+    "services": {
+        "HealthCheck": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/protos/HealthCheck.proto",
+            "name": "HealthCheck",
+            "fullName": "domain.HealthCheck.v1",
+            "methods": [
+                {
+                    "name": "Check",
+                    "fullName": "domain.HealthCheck.v1.Check",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/messages/domain.Health.v1.HealthCheckRequest",
+                        "name": "HealthCheckRequest",
+                        "fullName": "domain.Health.v1.HealthCheckRequest",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/messages/domain.Health.v1.HealthCheckResponse",
+                        "name": "HealthCheckResponse",
+                        "fullName": "domain.Health.v1.HealthCheckResponse",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    }
+                }
+            ],
+            "clientImpl": "python",
+            "serverImpl": "python",
+            "version": "0.0.1",
+            "dependencies": [
+                "domain.Health.v1"
+            ]
+        },
+        "SampleService": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/protos/SampleService.proto",
+            "name": "SampleService",
+            "fullName": "domain.SampleService.v1",
+            "methods": [
+                {
+                    "name": "SampleRPC",
+                    "fullName": "domain.SampleService.v1.SampleRPC",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "name": "SampleMsg",
+                        "fullName": "domain.samplePkg.v1.SampleMsg",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    }
+                }
+            ],
+            "clientImpl": "python",
+            "serverImpl": "python",
+            "version": "0.0.1",
+            "dependencies": [
+                "domain.samplePkg.v1"
+            ]
+        }
+    },
+    "packages": {
+        "protos/v1/Health.proto": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/packages/domain.Health.v1",
+            "name": "Health",
+            "package": "domain.Health.v1",
+            "messages": [
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/messages/domain.Health.v1.HealthCheckRequest",
+                    "name": "HealthCheckRequest",
+                    "fullName": "domain.Health.v1.HealthCheckRequest",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/fields/domain.Health.v1.HealthCheckRequest.service",
+                            "name": "service",
+                            "fullName": "domain.Health.v1.HealthCheckRequest.service",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/messages/domain.Health.v1.HealthCheckResponse",
+                    "name": "HealthCheckResponse",
+                    "fullName": "domain.Health.v1.HealthCheckResponse",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/fields/domain.Health.v1.HealthCheckResponse.status",
+                            "name": "status",
+                            "fullName": "domain.Health.v1.HealthCheckResponse.status",
+                            "index": 1,
+                            "fieldType": "TYPE_ENUM",
+                            "label": "LABEL_OPTIONAL",
+                            "enumType": {
+                                "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/enums/domain.Health.v1.ServingStatus",
+                                "name": "ServingStatus",
+                                "fullName": "domain.Health.v1.ServingStatus",
+                                "values": [
+                                    {
+                                        "name": "UNKNOWN"
+                                    },
+                                    {
+                                        "name": "SERVING",
+                                        "number": 1,
+                                        "index": 1
+                                    },
+                                    {
+                                        "name": "NOT_SERVING",
+                                        "number": 2,
+                                        "index": 2
+                                    },
+                                    {
+                                        "name": "NOT_FOUND",
+                                        "number": 3,
+                                        "index": 3
+                                    }
+                                ]
+                            },
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                }
+            ],
+            "version": "0.0.1",
+            "enums": [
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/enums/domain.Health.v1.ServingStatus",
+                    "name": "ServingStatus",
+                    "fullName": "domain.Health.v1.ServingStatus",
+                    "values": [
+                        {
+                            "name": "UNKNOWN"
+                        },
+                        {
+                            "name": "SERVING",
+                            "number": 1,
+                            "index": 1
+                        },
+                        {
+                            "name": "NOT_SERVING",
+                            "number": 2,
+                            "index": 2
+                        },
+                        {
+                            "name": "NOT_FOUND",
+                            "number": 3,
+                            "index": 3
+                        }
+                    ]
+                }
+            ],
+            "dependencies": []
+        },
+        "protos/v1/samplePkg.proto": {
+            "uri": "/Users/amitshmulevitch/webezy/samples/project-health-check/packages/domain.samplePkg.v1",
+            "name": "samplePkg",
+            "package": "domain.samplePkg.v1",
+            "messages": [
+                {
+                    "name": "SampleMsg",
+                    "fullName": "domain.samplePkg.v1.SampleMsg",
+                    "fields": [
+                        {
+                            "name": "SampleString",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleBool",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_BOOL",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "name": "SampleInt",
+                            "fullName": "domain.samplePkg.v1.SampleMsg.SampleString",
+                            "index": 1,
+                            "fieldType": "TYPE_INT32",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                }
+            ],
+            "version": "0.0.1",
+            "dependencies": [],
+            "enums": []
+        }
+    }
+}
