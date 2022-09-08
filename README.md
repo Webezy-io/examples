@@ -9,6 +9,12 @@ It includes the following samples:
 2. [__project-py-ts__](https://github.com/Webezy-io/examples/tree/main/project-py-ts) - More advanced sample utilizing ```Typescript``` client as well with the default ```Python``` client built with the ```wz new``` command. Repo tutorial is the same as __project-py__ just change the language display at top right corner of the page.
 
 3. [__project-metadata__](https://github.com/Webezy-io/examples/tree/main/project-metadata) - A brief overview on how to utilize HTTP2 headers with ```Metadata``` object in gRPC for both client classes and services.
+
+4. [__project-ts__](https://github.com/Webezy-io/examples/tree/main/project-ts) - A first working sample of Typescript server with Webezy.io CLI
+
+5. [__project-pub-sub__](https://github.com/Webezy-io/examples/tree/main/project-pub-sub) - A production "Ready" project that demonstrate advanced techniques including server streaming and Service modification for more complex use cases in typescript, it is used with conjuction of other tools such as ```Envoy proxy```, ```Grafana``` and ```Celery``` to achieve maximum results. also it is first Webezy.io project using ```Webpack``` functionality to build classes that can be used in-browser ! it is using ```grpc-web``` official gRPC library for that case
+
+
 This repo supports ```Typescript``` client and both ```Python``` services and client code.
 
 # Contributing

@@ -2,6 +2,9 @@
 
 This project has been generated thanks to [```Webezy.io```](https://www.webezy.io/docs) CLI.
 
+
+![Data stream preview](datastreams.gif)
+
 # Main componentes
 
 This project conssisting with multiple software componentes that working togther to achieve a ```"publisher + subscriber + Real-time consumer"``` architecture.
@@ -51,8 +54,12 @@ This project can be further developed in few paths :
     then restart the grafana container which should re-install the plugins
     [Grafana Plugin Tutorial](https://grafana.com/tutorials/build-a-data-source-plugin/)
 
+    Go to [Plugin Directory](grafana/pubsub-plugin/) where you can check out for more information.
+
+
 * Pubsub Service :
-    - Main service can be further enriched with more complex event hanlding algorithms under ```services/PubsubService.ts```
+    - Main service can be further enriched with more complex event hanlding algorithms under [```services/PubsubService.ts```](services/PubsubService.ts)
 
 * Clients :
     - More client code can be further developed to send and respond to event or maybe even to chain some events
+
