@@ -18,6 +18,17 @@ message HealthCheckRequest {
 message HealthCheckResponse {
 	ServingStatus status = 1;
 }
+
+// [webezy] - 'webezy.Health.v1.SetHealthRequest' 
+message SetHealthRequest {
+	string Service = 1;
+	ServingStatus Status = 2;
+}
+
+// [webezy] - 'webezy.Health.v1.SetHealthResponse' 
+message SetHealthResponse {
+	string Status = 1;
+}
 // [webezy] - Enums descriptions 
 enum ServingStatus {
 	UNKNOWN = 0;

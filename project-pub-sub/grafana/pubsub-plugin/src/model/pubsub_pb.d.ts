@@ -8,6 +8,11 @@ export class PublishRequest extends jspb.Message {
   getTopic(): string;
   setTopic(value: string): PublishRequest;
 
+  getEvent(): Event | undefined;
+  setEvent(value?: Event): PublishRequest;
+  hasEvent(): boolean;
+  clearEvent(): PublishRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PublishRequest): PublishRequest.AsObject;
@@ -19,6 +24,7 @@ export class PublishRequest extends jspb.Message {
 export namespace TestPublishRequest {
   export type AsObject = {
     topic: string,
+    event?: Event.AsObject,
   }
 }
 

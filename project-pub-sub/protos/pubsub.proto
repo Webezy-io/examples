@@ -14,6 +14,7 @@ package domain.pubsub.v1;
 // [webezy] - 'domain.pubsub.v1.PublishRequest' 
 message PublishRequest {
 	string Topic = 1;
+	Event Event = 2;
 }
 
 // [webezy] - 'domain.pubsub.v1.Event' 

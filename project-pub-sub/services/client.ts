@@ -2,10 +2,12 @@ import { credentials, Metadata, ServiceError as _service_error } from '@grpc/grp
 import { promisify } from 'util';
 
 import { HealthCheckClient } from './generated/HealthCheck';
-import { PubsubServiceClient } from './generated/PubsubService';
 import { Observable } from 'rxjs';
+import { PubsubServiceClient } from './generated/PubsubService';
 import { HealthCheckRequest } from './generated/Health';
 import { HealthCheckResponse } from './generated/Health';
+import { SetHealthRequest } from './generated/Health';
+import { SetHealthResponse } from './generated/Health';
 import { PublishRequest } from './generated/pubsub';
 import { PublishResponse } from './generated/pubsub';
 import { SubscribeRequest } from './generated/pubsub';
@@ -23,7 +25,7 @@ const _DEFAULT_OPTIONS = {
 
 class projectpubsub {
 
-	constructor(host: string = 'localhost:50051', metadata: Metadata = new Metadata()) {
+	constructor(host: string = 'localhost:9000', metadata: Metadata = new Metadata()) {
 		this.host = host;
 		this.metadata = metadata;
 		this.HealthCheck_client = new HealthCheckClient(this.host, credentials.createInsecure(),_DEFAULT_OPTIONS);
@@ -34,7 +36,6 @@ class projectpubsub {
 	private readonly host: string;
 	public readonly HealthCheck_client: HealthCheckClient;
 	public readonly PubsubService_client: PubsubServiceClient;
-		public readonly PubsubService_client: PubsubServiceClient;
 
 	/**
 	* @public Check
@@ -45,6 +46,31 @@ class projectpubsub {
 		return promisify<HealthCheckRequest, Metadata, HealthCheckResponse>(this.HealthCheck_client.check.bind(this.HealthCheck_client))(params, metadata);
 	}
 
+	/**
+	* Watch
+	* @param {HealthCheckRequest} params request message {@link HealthCheckRequest}
+	*/
+	public Watch(params: HealthCheckRequest, metadata: Metadata = this.metadata): Observable<HealthCheckResponse> {
+		return new Observable(subscriber => {
+		const stream = this.HealthCheck_client.watch(params, metadata);
+			stream.on('data',(res: HealthCheckResponse) => {
+				subscriber.next(res)
+			}).on('end', () => {
+				subscriber.complete()
+			}).on('error', (err: any) => {
+				subscriber.next(err)
+				subscriber.complete()
+			});
+		})
+	}
+	/**
+	* @public SetHealth
+	* @param {SetHealthRequest} params request message {@link SetHealthRequest}
+	* @returns response message {@link SetHealthResponse}
+	*/
+	public SetHealth(params: SetHealthRequest, metadata: Metadata = this.metadata): Promise<SetHealthResponse> {
+		return promisify<SetHealthRequest, Metadata, SetHealthResponse>(this.HealthCheck_client.setHealth.bind(this.HealthCheck_client))(params, metadata);
+	}
 	/**
 	* @public Publish
 	* @param {PublishRequest} params request message {@link PublishRequest}

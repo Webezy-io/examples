@@ -47,6 +47,52 @@
                         "type": "descriptors",
                         "kind": "Webezy.descriptor/message"
                     }
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/methods/domain.HealthCheck.v1.Watch",
+                    "name": "Watch",
+                    "fullName": "domain.HealthCheck.v1.Watch",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/messages/webezy.Health.v1.HealthCheckRequest",
+                        "name": "HealthCheckRequest",
+                        "fullName": "webezy.Health.v1.HealthCheckRequest",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/messages/webezy.Health.v1.HealthCheckResponse",
+                        "name": "HealthCheckResponse",
+                        "fullName": "webezy.Health.v1.HealthCheckResponse",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "serverStreaming": true,
+                    "clientStreaming": false
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/methods/webezy.HealthCheck.v1.SetHealth",
+                    "name": "SetHealth",
+                    "fullName": "webezy.HealthCheck.v1.SetHealth",
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/method",
+                    "inputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/messages/webezy.Health.v1.SetHealthRequest",
+                        "name": "SetHealthRequest",
+                        "fullName": "webezy.Health.v1.SetHealthRequest",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "outputType": {
+                        "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/messages/webezy.Health.v1.SetHealthResponse",
+                        "name": "SetHealthResponse",
+                        "fullName": "webezy.Health.v1.SetHealthResponse",
+                        "type": "descriptors",
+                        "kind": "Webezy.descriptor/message"
+                    },
+                    "clientStreaming": false,
+                    "serverStreaming": false
                 }
             ],
             "clientImpl": "python",
@@ -184,6 +230,79 @@
                     ],
                     "type": "descriptors",
                     "kind": "Webezy.descriptor/message"
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/messages/domain.Health.v1.SetHealthRequest",
+                    "name": "SetHealthRequest",
+                    "fullName": "domain.Health.v1.SetHealthRequest",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/fields/domain.Health.v1.SetHealthRequest.Service",
+                            "name": "Service",
+                            "fullName": "webezy.Health.v1.SetHealthRequest.Service",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/fields/domain.Health.v1.SetHealthRequest.Status",
+                            "name": "Status",
+                            "fullName": "webezy.Health.v1.SetHealthRequest.Status",
+                            "index": 2,
+                            "fieldType": "TYPE_ENUM",
+                            "label": "LABEL_OPTIONAL",
+                            "enumType": {
+                                "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/enums/webezy.Health.v1.ServingStatus",
+                                "name": "ServingStatus",
+                                "fullName": "webezy.Health.v1.ServingStatus",
+                                "values": [
+                                    {
+                                        "name": "UNKNOWN"
+                                    },
+                                    {
+                                        "name": "SERVING",
+                                        "number": 1,
+                                        "index": 1
+                                    },
+                                    {
+                                        "name": "NOT_SERVING",
+                                        "number": 2,
+                                        "index": 2
+                                    },
+                                    {
+                                        "name": "NOT_FOUND",
+                                        "number": 3,
+                                        "index": 3
+                                    }
+                                ]
+                            },
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
+                },
+                {
+                    "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/messages/domain.Health.v1.SetHealthResponse",
+                    "name": "SetHealthResponse",
+                    "fullName": "webezy.Health.v1.SetHealthResponse",
+                    "fields": [
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/fields/domain.Health.v1.SetHealthResponse.Status",
+                            "name": "Status",
+                            "fullName": "webezy.Health.v1.SetHealthResponse.Status",
+                            "index": 1,
+                            "fieldType": "TYPE_STRING",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field"
+                        }
+                    ],
+                    "type": "descriptors",
+                    "kind": "Webezy.descriptor/message"
                 }
             ],
             "version": "0.0.1",
@@ -236,6 +355,17 @@
                             "label": "LABEL_OPTIONAL",
                             "type": "descriptors",
                             "kind": "Webezy.descriptor/field"
+                        },
+                        {
+                            "uri": "/Users/amitshmulevitch/webezy/samples/project-pub-sub/fields/domain.pubsub.v1.PublishRequest.Event",
+                            "name": "Event",
+                            "fullName": "domain.pubsub.v1.PublishRequest.Event",
+                            "index": 2,
+                            "fieldType": "TYPE_MESSAGE",
+                            "label": "LABEL_OPTIONAL",
+                            "type": "descriptors",
+                            "kind": "Webezy.descriptor/field",
+                            "messageType": "domain.pubsub.v1.Event"
                         }
                     ],
                     "type": "descriptors",

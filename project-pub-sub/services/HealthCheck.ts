@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { handleUnaryCall, handleServerStreamingCall, handleBidiStreamingCall, sendUnaryData, ServerDuplexStream, ServerReadableStream, ServerUnaryCall, ServerWritableStream, status, UntypedHandleCall } from '@grpc/grpc-js';
-// import { ServiceError } from './utils/error';
+import { ServiceError } from './utils/error';
 import { HealthCheckServer, HealthCheckService } from './generated/HealthCheck';
-import { HealthCheckRequest, HealthCheckResponse, ServingStatus } from './generated/Health';
+import { HealthCheckRequest, HealthCheckResponse, SetHealthRequest, SetHealthResponse } from './generated/Health';
 
 class HealthCheck implements HealthCheckServer {
 	[method: string]: UntypedHandleCall;
@@ -11,17 +11,28 @@ class HealthCheck implements HealthCheckServer {
 		call: ServerUnaryCall<HealthCheckRequest, HealthCheckResponse>,
 		callback: sendUnaryData<HealthCheckResponse>
 	) => {
-		const res: Partial<HealthCheckResponse> = {};
-		const { service } = call.request;
+		// const res: Partial<HealthCheckResponse> = {};
+		// const { service } = call.request;
+		// callback(null, HealthCheckResponse.fromJSON(res));
+		return callback(new ServiceError(status.UNIMPLEMENTED, '[Webezy] Method is not yet implemented !'), null);
+	}
 
-		if (service === 'PubsubService' ) {
-			res.status = ServingStatus.SERVING
-		} else {
-			res.status = ServingStatus.NOT_FOUND
-		}
+	public watch: handleServerStreamingCall<HealthCheckRequest, HealthCheckResponse> = (
+		call: ServerWritableStream<HealthCheckRequest, HealthCheckResponse>
+	) => {
+		// const { service } = call.request;
+		// call.write()
+		call.destroy(new ServiceError(status.UNIMPLEMENTED, '[Webezy] Method is not yet implemented !'))
+	}
 
-		callback(null, HealthCheckResponse.fromJSON(res));
-		// return callback(new ServiceError(status.UNIMPLEMENTED, '[Webezy] Method is not yet implemented !'), null);
+	public setHealth: handleUnaryCall<SetHealthRequest, SetHealthResponse> = (
+		call: ServerUnaryCall<SetHealthRequest, SetHealthResponse>,
+		callback: sendUnaryData<SetHealthResponse>
+	) => {
+		// const res: Partial<SetHealthResponse> = {};
+		// const { Service, Status } = call.request;
+		// callback(null, SetHealthResponse.fromJSON(res));
+		return callback(new ServiceError(status.UNIMPLEMENTED, '[Webezy] Method is not yet implemented !'), null);
 	}
 }
 

@@ -11,5 +11,9 @@ import "Health.proto";
 service HealthCheck {
 	// [webezy] - Check IN:webezy.Health.v1.HealthCheckRequest | OUT:webezy.Health.v1.HealthCheckResponse
 	rpc Check(webezy.Health.v1.HealthCheckRequest) returns (webezy.Health.v1.HealthCheckResponse);
+	// [webezy] - Watch IN:webezy.Health.v1.HealthCheckRequest | OUT:stream webezy.Health.v1.HealthCheckResponse
+	rpc Watch(webezy.Health.v1.HealthCheckRequest) returns (stream webezy.Health.v1.HealthCheckResponse);
+	// [webezy] - SetHealth IN:webezy.Health.v1.SetHealthRequest | OUT:webezy.Health.v1.SetHealthResponse
+	rpc SetHealth(webezy.Health.v1.SetHealthRequest) returns (webezy.Health.v1.SetHealthResponse);
 }
 

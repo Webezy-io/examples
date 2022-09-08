@@ -14,13 +14,13 @@ services:
     command: /usr/local/bin/envoy -c /etc/envoy/envoy.yaml --service-cluster webezy_service --service-node webezy_service
     ports:
       - "9000:9000"
-      - "3000:3000"
-
 
   pubsub-monitor:
     image: grafana/grafana:7.0.0
     container_name: pubsub-monitor
     restart: unless-stopped
+    ports:
+        - "3000:3000"
     environment:
       - GF_DEFAULT_APP_MODE=development
       - GF_SECURITY_ADMIN_USER=admin

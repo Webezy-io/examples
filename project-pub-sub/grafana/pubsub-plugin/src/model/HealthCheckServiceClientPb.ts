@@ -27,7 +27,7 @@ export class HealthCheckClient {
                options?: null | { [index: string]: any; }) {
     if (!options) options = {};
     if (!credentials) credentials = {};
-    options['format'] = 'binary';
+    options['format'] = 'text';
 
     this.client_ = new grpcWeb.GrpcWebClientBase(options);
     this.hostname_ = hostname;
@@ -76,6 +76,71 @@ export class HealthCheckClient {
     request,
     metadata || {},
     this.methodDescriptorCheck);
+  }
+
+  methodDescriptorWatch = new grpcWeb.MethodDescriptor(
+    '/HealthCheck/Watch',
+    grpcWeb.MethodType.SERVER_STREAMING,
+    Health_pb.HealthCheckRequest,
+    Health_pb.HealthCheckResponse,
+    (request: Health_pb.HealthCheckRequest) => {
+      return request.serializeBinary();
+    },
+    Health_pb.HealthCheckResponse.deserializeBinary
+  );
+
+  watch(
+    request: Health_pb.HealthCheckRequest,
+    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<Health_pb.HealthCheckResponse> {
+    return this.client_.serverStreaming(
+      this.hostname_ +
+        '/HealthCheck/Watch',
+      request,
+      metadata || {},
+      this.methodDescriptorWatch);
+  }
+
+  methodDescriptorSetHealth = new grpcWeb.MethodDescriptor(
+    '/HealthCheck/SetHealth',
+    grpcWeb.MethodType.UNARY,
+    Health_pb.SetHealthRequest,
+    Health_pb.SetHealthResponse,
+    (request: Health_pb.SetHealthRequest) => {
+      return request.serializeBinary();
+    },
+    Health_pb.SetHealthResponse.deserializeBinary
+  );
+
+  setHealth(
+    request: Health_pb.SetHealthRequest,
+    metadata: grpcWeb.Metadata | null): Promise<Health_pb.SetHealthResponse>;
+
+  setHealth(
+    request: Health_pb.SetHealthRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: Health_pb.SetHealthResponse) => void): grpcWeb.ClientReadableStream<Health_pb.SetHealthResponse>;
+
+  setHealth(
+    request: Health_pb.SetHealthRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: Health_pb.SetHealthResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/HealthCheck/SetHealth',
+        request,
+        metadata || {},
+        this.methodDescriptorSetHealth,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/HealthCheck/SetHealth',
+    request,
+    metadata || {},
+    this.methodDescriptorSetHealth);
   }
 
 }

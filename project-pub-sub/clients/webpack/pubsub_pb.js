@@ -161,7 +161,8 @@ proto.domain.pubsub.v1.PublishRequest.prototype.toObject = function(opt_includeI
  */
 proto.domain.pubsub.v1.PublishRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topic: jspb.Message.getFieldWithDefault(msg, 1, "")
+    topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    event: (f = msg.getEvent()) && proto.domain.pubsub.v1.Event.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -202,6 +203,11 @@ proto.domain.pubsub.v1.PublishRequest.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readString());
       msg.setTopic(value);
       break;
+    case 2:
+      var value = new proto.domain.pubsub.v1.Event;
+      reader.readMessage(value,proto.domain.pubsub.v1.Event.deserializeBinaryFromReader);
+      msg.setEvent(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -238,6 +244,14 @@ proto.domain.pubsub.v1.PublishRequest.serializeBinaryToWriter = function(message
       f
     );
   }
+  f = message.getEvent();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.domain.pubsub.v1.Event.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -256,6 +270,43 @@ proto.domain.pubsub.v1.PublishRequest.prototype.getTopic = function() {
  */
 proto.domain.pubsub.v1.PublishRequest.prototype.setTopic = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional Event Event = 2;
+ * @return {?proto.domain.pubsub.v1.Event}
+ */
+proto.domain.pubsub.v1.PublishRequest.prototype.getEvent = function() {
+  return /** @type{?proto.domain.pubsub.v1.Event} */ (
+    jspb.Message.getWrapperField(this, proto.domain.pubsub.v1.Event, 2));
+};
+
+
+/**
+ * @param {?proto.domain.pubsub.v1.Event|undefined} value
+ * @return {!proto.domain.pubsub.v1.PublishRequest} returns this
+*/
+proto.domain.pubsub.v1.PublishRequest.prototype.setEvent = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.domain.pubsub.v1.PublishRequest} returns this
+ */
+proto.domain.pubsub.v1.PublishRequest.prototype.clearEvent = function() {
+  return this.setEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.domain.pubsub.v1.PublishRequest.prototype.hasEvent = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

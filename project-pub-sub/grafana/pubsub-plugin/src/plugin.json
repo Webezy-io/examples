@@ -4,6 +4,7 @@
   "name": "pubsub-plugin",
   "id": "webezy",
   "metrics": true,
+  "streaming": true,
   "info": {
     "description": "Webezy sample plugin to project-pub-sub, More info on https://www.webezy.io",
     "author": {
@@ -33,7 +34,6 @@
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
-  "streaming": true,
   "dependencies": {
     "grafanaDependency": ">=7.0.0",
     "plugins": []

@@ -18,6 +18,7 @@
     "@grafana/ui": "latest",
     "@testing-library/jest-dom": "5.4.0",
     "@testing-library/react": "^10.0.2",
+    "@types/google-protobuf": "^3.15.6",
     "@types/lodash": "latest"
   },
   "engines": {
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "google-protobuf": "^3.21.0",
-    "grpc-web": "^1.3.1"
+    "grpc-web": "^1.3.1",
+    "rxjs": "^7.5.6"
   }
 }
