@@ -1,7 +1,7 @@
 syntax = "proto3";
 // Generated Webezy proto EDIT from CLI / Make manual edits here and run 'webezy build --manual'
 
-import "protos/samplePkg.proto";
+import "samplePkg.proto";
 
 
 

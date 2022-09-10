@@ -18,6 +18,10 @@
             }
         ]
     },
+    "config": {
+        "host": "localhost",
+        "port": 50051
+    },
     "services": {
         "SampleService": {
             "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/protos/SampleService.proto",
@@ -91,81 +95,11 @@
                     ],
                     "type": "descriptors",
                     "kind": "Webezy.descriptor/message"
-                },
-                {
-                    "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/messages/domain.samplePkg.v1.TestEnum",
-                    "name": "TestEnum",
-                    "fullName": "domain.samplePkg.v1.TestEnum",
-                    "fields": [
-                        {
-                            "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/fields/domain.samplePkg.v1.TestEnum.Status",
-                            "name": "Status",
-                            "fullName": "domain.samplePkg.v1.TestEnum.Status",
-                            "index": 1,
-                            "fieldType": "TYPE_ENUM",
-                            "label": "LABEL_OPTIONAL",
-                            "enumType": {
-                                "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/enums/domain.samplePkg.v1.ServingStatus",
-                                "name": "ServingStatus",
-                                "fullName": "domain.samplePkg.v1.ServingStatus",
-                                "values": [
-                                    {
-                                        "name": "UNKNOWN_SERVINGSTATUS"
-                                    },
-                                    {
-                                        "name": "NOT_FOUND",
-                                        "number": 1,
-                                        "index": 1
-                                    },
-                                    {
-                                        "name": "SERVING",
-                                        "number": 2,
-                                        "index": 2
-                                    },
-                                    {
-                                        "name": "NOT_SERVING",
-                                        "number": 3,
-                                        "index": 3
-                                    }
-                                ]
-                            },
-                            "type": "descriptors",
-                            "kind": "Webezy.descriptor/field"
-                        }
-                    ],
-                    "type": "descriptors",
-                    "kind": "Webezy.descriptor/message"
                 }
             ],
             "version": "0.0.1",
             "dependencies": [],
-            "enums": [
-                {
-                    "uri": "/Users/amitshmulevitch/webezy/samples/project-ts/enums/domain.samplePkg.v1.ServingStatus",
-                    "name": "ServingStatus",
-                    "fullName": "domain.samplePkg.v1.ServingStatus",
-                    "values": [
-                        {
-                            "name": "UNKNOWN_SERVINGSTATUS"
-                        },
-                        {
-                            "name": "NOT_FOUND",
-                            "number": 1,
-                            "index": 1
-                        },
-                        {
-                            "name": "SERVING",
-                            "number": 2,
-                            "index": 2
-                        },
-                        {
-                            "name": "NOT_SERVING",
-                            "number": 3,
-                            "index": 3
-                        }
-                    ]
-                }
-            ]
+            "enums": []
         }
     }
 }

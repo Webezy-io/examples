@@ -2,11 +2,12 @@
     "name": "projectts",
     "version": "1.0.0",
     "description": "This project has been generated thanks to ```Webezy.io``` CLI. For start using it please run  ```sh webezy run --build```  and see the magic in action. For more information please visit https://www.webezy.io/docs",
-    "main": "bin-proto.js",
+    "main": "bin/proto.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "eslint --ext .ts .",
-        "build": "node bin-proto && rimraf clients/typescript/generated && rimraf server && tsc -b",
+        "build": "node bin/proto && rimraf clients/typescript/generated && rimraf server && tsc -b",
+        "build:webpack": "bash bin/webpack.sh",
         "start": "node clients/typescript/server",
         "client": "node clients/typescript/client",
         "health": "node clients/typescript/health"

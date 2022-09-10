@@ -11,14 +11,17 @@ class SampleService implements SampleServiceServer {
 		call: ServerUnaryCall<SampleMsg, SampleMsg>,
 		callback: sendUnaryData<SampleMsg>
 	) => {
-		const res: Partial<SampleMsg> = {};
+		// Recieving request
 		const { SampleString, SampleBool, SampleInt } = call.request;
 		console.log(`Recieved message from client: ${SampleString}`)
+		// Preparing response
+		const res: Partial<SampleMsg> = {};
 		res.SampleBool = !SampleBool;
 		res.SampleInt = SampleInt + 1;
 		res.SampleString = "Some message from typescript server"
+		
+		// Returning result
 		callback(null, SampleMsg.fromJSON(res));
-		// return callback(new ServiceError(status.UNIMPLEMENTED, '[Webezy] Method is not yet implemented !'), null);
 	}
 }
 
